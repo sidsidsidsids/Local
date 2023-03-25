@@ -12,9 +12,9 @@ def index(request):
 
 def create(request):
     if request.method == "POST":
-        form = PostForm(request.post)
+        form = PostForm(request.POST, request.FILES)
         if form.is_valid():
-            post = form.save()
+            form.save()
             return redirect('posts:index')
     else:
         form = PostForm()
@@ -23,5 +23,22 @@ def create(request):
     }
     return render(request, 'posts/create.html', context)
 
-def delete(request):
-    pass
+def delete(request, pk):
+    post = POST.objects.get(pk=pk)
+    post.delete()
+    return redirect('posts:index')
+
+def update(request, pk):
+    post = POST.objects.get(pk=pk)
+    if request.method == "POST":
+        form = PostForm(request.POST, request.FILES, instance=post)
+        if form.is_valid():
+            form.save()
+            return redirect('posts:index')
+    else:
+        form = PostForm(instance = post)
+    context = {
+        'form': form,
+        'post': post
+    }
+    return render(request, 'posts/update.html', context)

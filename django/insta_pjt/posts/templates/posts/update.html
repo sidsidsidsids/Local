@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1>Edit Post</h1>
+<h3 class="text-secondary">Content</h3><br>
+<form action="{% url 'posts:update' post.pk%}" method="POST" enctype="multipart/form-data">
+  {% csrf_token %}
+  {{ form.as_p }}
+  <input type="Submit" class="btn btn-primary">
+</form>
+{% endblock content %}
+

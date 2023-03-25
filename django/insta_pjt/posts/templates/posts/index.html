@@ -1,5 +1,33 @@
 {% extends 'base.html' %}
 {% block content %}
   <h1>메인 화면</h1>
+  <div class="row">
+  {% for post in post_list %}
+  <div class="col-sm-3 mt-2">
+    <div class="card">
+      <div class="card-body">
+      {% if post.imagecontent %}
+        <img src="{{ post.imagecontent.url }}" alt="image" class="mx-auto col-sm-12">
+      {% endif %}
+      <p>{{post.content}}</p>
+      </div>
+      <div class="row">
+      <div class="col-sm-2 mx-1">
+        <form action="{% url 'posts:update' post.pk%}" class="">
+          {% csrf_token %}
+          <input type="submit" class="btn btn-info" value="Edit">
+        </form>
+      </div>
+      <div class="col-sm-2">
+        <form action="{% url 'posts:delete' post.pk%}" class="mx-1">
+          {% csrf_token %}
+          <input type="submit" class="btn btn-danger" value="Delete">
+        </form>
+      </div>
+    </div>
+    </div>
+  </div>
+  {% endfor %}
+  </div>
 {% endblock content %}
 
