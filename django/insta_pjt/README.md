@@ -63,3 +63,41 @@
   - 햄버거 버튼
   
   - authenticated한 유저에 대한 content 업로드/삭제 권한
+
+---
+
+### 0416
+
+![0416django_index.JPG](README_assets/7ccf3ec0708b66d91c11e941b21dbdfe1dcc343f.JPG)
+
+![0416django_likes.JPG](README_assets/a8b852c6701b5105a1287f539a11e7bf50781387.JPG)
+
+![0416django_follow.JPG](README_assets/e7c94e4975d4e8d504e7e5c94c00a94c9f243fc4.JPG)
+
+![0416django_followings.JPG](README_assets/79ff2fabc8a2469a1ab8d3d4449992f42cf3f404.JPG)
+
+- 구현
+  
+  - 댓글 생성/조회/삭제
+  
+  - 게시글 좋아요/좋아요한 게시글만 필터링
+  
+  - 유저 팔로우/팔로우한 유저 게시글만 필터링
+  
+  - 햄버거 버튼
+  
+  - 본인이 작성한 컨텐츠만 수정 및 삭제 가능하게 함
+
+- 제약
+  
+  - 기능 구현만 신경 써서 요소들의 프론트 구성을 다루지 않아 지저분함
+
+- 미구현
+  
+  - 프로필
+
+---
+
+- django의 기초적인 백엔드는 어느 정도 익혔다고 판단하여 프로젝트 종료
+
+- DTL 이용하여 프론트엔드 작업하기 보다 다른 툴을 이용하는 것이 좋다고 생각됨 
